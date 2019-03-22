@@ -4,6 +4,7 @@ import org.jboss.ejb3.annotation.SecurityDomain;
 import org.jboss.ws.api.annotation.WebContext;
 
 import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
@@ -18,34 +19,30 @@ import java.util.List;
 
 @WebService
 @Stateless
-@DeclareRoles({"developer"})
-@WebContext(authMethod = "BASIC",transportGuarantee = "NONE")
-@SecurityDomain("testdomeny")
+@DeclareRoles({"developer", "other"})
+@RolesAllowed("user6")
+@WebContext(urlPattern="/*", authMethod="BASIC", transportGuarantee="NONE")
+@SecurityDomain("other")
 public class HelloWorld {
-//    @WebMethod
-//    public String hello(@WebParam(name = "name") String name){
-//        return "Hello " + name;
-//    }
 
-//    @WebMethod
-//    @RolesAllowed("abc")
-//    @XmlElementWrapper(name="ElementsWraper")
-//    @XmlElement(name="Element")
-//    public List Hi(@WebParam(name = "name")String name){
-//        List<String> list = new ArrayList<>();
-//        list.add("Hello " + name);
-//        list.add("Cześć " + name);
-//        list.add("Guten Tag " + name);
-//
-//        return list;
-//    }
+    @WebMethod
+    @XmlElementWrapper(name="ElementsWraper")
+    @XmlElement(name="Element")
+    @PermitAll
+    public List Hi(@WebParam(name = "name")String name){
+        List<String> list = new ArrayList<>();
+        list.add("Hello " + name);
+        list.add("Cześć " + name);
+        list.add("Guten Tag " + name);
+
+        return list;
+    }
 
     @WebMethod(action = "Hello")
     @WebResult(name = "getHello")
     @RolesAllowed("developer")
+//    @PermitAll
     public String hello(@WebParam(name = "name") String name){
         return "Hello " + name;
     }
-
-
 }
