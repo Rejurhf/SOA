@@ -39,9 +39,8 @@ public class HelloWorld {
     }
 
     @WebMethod(action = "Hello")
-    @WebResult(name = "getHello")
+//    @WebResult(name = "getHello")
     @RolesAllowed("developer")
-//    @PermitAll
     public String hello(@WebParam(name = "name") String name){
         return "Hello " + name;
     }
