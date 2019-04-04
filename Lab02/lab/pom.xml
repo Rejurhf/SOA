@@ -138,8 +138,34 @@
                         <skip>true</skip>
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.jboss.ws.plugins</groupId>
+                    <artifactId> jaxws-tools-maven-plugin</artifactId>
+                    <version>1.2.0.Final</version>
+                    <configuration>
+                        <wsdls>
+                            <wsdl>http://localhost:8080/lab-ejb/Student?wsdl</wsdl>
+                        </wsdls>
+                        <targetPackage> pl.edu.agh</targetPackage>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal> wsconsume</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
+
+        <resources>
+            <resource>
+                <directory>lab-ear/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
 </project>
