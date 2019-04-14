@@ -117,9 +117,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lab-ear" />
         <module name="lab-ejb" />
         <module name="lab-web" />
+        <module name="lab-ear" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -129,7 +129,7 @@
       <module name="lab-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
-  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab-ear" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab-ejb" charset="UTF-8" />
@@ -319,12 +319,16 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/lab.iml" filepath="$PROJECT_DIR$/lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab.iml" filepath="$PROJECT_DIR$/lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab-ear/lab-ear.iml" filepath="$PROJECT_DIR$/lab-ear/lab-ear.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab-ear/lab-ear.iml" filepath="$PROJECT_DIR$/lab-ear/lab-ear.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab-ejb/lab-ejb.iml" filepath="$PROJECT_DIR$/lab-ejb/lab-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab-ejb/lab-ejb.iml" filepath="$PROJECT_DIR$/lab-ejb/lab-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab-web/lab-web.iml" filepath="$PROJECT_DIR$/lab-web/lab-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab-web/lab-web.iml" filepath="$PROJECT_DIR$/lab-web/lab-web.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8.0_202" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
   </component>
